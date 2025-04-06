@@ -1,5 +1,23 @@
-import mongoose from "mongoose";
-import { DB_NAME } from "./constants.js";
+// require('dotenv').config({path: './env'})
+import dotenv from "dotenv"
+import connectDB from "./db/index.js";
+
+dotenv.config({
+    path: './.env'
+})
+
+connectDB()
+    // .then(() => {
+    //     console.log("Server starting after successful database connection...")
+    //     // Start your server here
+    // })
+    // .catch((err) => {
+    //     console.log("Database connection failed:", err)
+    // })
+
+
+
+
 
 
 
