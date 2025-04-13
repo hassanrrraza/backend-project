@@ -1,23 +1,21 @@
 import { Router } from "express";
 import { registerUser } from "../controllers/user.controller.js";
-import { upload } from "../middlewares/multer.middlewares.js";
+import { upload } from "../middlewares/multer.middleware.js";
 
 const router = Router()
 
 router.route("/register").post(
-    upload.field([
+    upload.fields([
         {
-            name: "avatar",  //when writing the front use same for connection with frontend and backend
-            maxCount = 1
+            name: "avatar",
+            maxCount: 1
         },
         {
             name: "coverImage",
-            maxcount:
-        } //middleware injection on whichever method is executing
+            maxCount: 1
+        }
     ]),
-    registerUser)
+    registerUser
+    )
 
-export default router
-
-
-
+export default router;
